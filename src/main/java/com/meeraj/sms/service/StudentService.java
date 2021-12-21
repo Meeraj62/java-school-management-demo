@@ -8,4 +8,6 @@ import java.util.List;
 @Service
 public interface StudentService {
     public List<Student> getAllStudents();
+
+    Student store(Student student);
 }
