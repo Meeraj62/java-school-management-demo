@@ -13,15 +13,29 @@
 <body>
 
 
-<div class="container bg-orange">
-
-        <h1 class="float-left">Students list</h1>
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <a th:href="@{/create}" class="btn btn-danger btn-sm float-right">Add Student</a>
+<div class="container bg-gray mt-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white font-weight-bold" href="#">Student Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-white font-weight-bold" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white font-weight-bold" th:href="@{/create}">Add Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white font-weight-bold" href="#">Teachers</a>
+                </li>
+            </ul>
         </div>
-    </div>
-    <table class="table table-responsive table-bordered table-striped">
+    </nav>
+
+    <table class="table table-responsive table-bordered table-striped mt-2">
         <thead class="table-dark">
         <th>Full Name</th>
         <th>Email</th>
@@ -31,7 +45,14 @@
             <td th:text="${student.firstName} + ' ' + ${student.lastName}">Onions</td>
             <td th:text="${student.email}"></td>
             <td>
-
+                <div class="row">
+                    <div class="col-6">
+                        <a th:href="@{'/edit/' + ${student.id}}" class="btn btn-sm btn-primary btn-block mr-2"> Edit </a>
+                    </div>
+                    <div class="col-6">
+                        <a th:href="@{'' + ${student.id}}" class="btn btn-sm btn-danger btn-block"> Delete </a>
+                    </div>
+                </div>
             </td>
         </tr>
     </table>

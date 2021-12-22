@@ -10,4 +10,10 @@ public interface StudentService {
     public List<Student> getAllStudents();
 
     Student store(Student student);
+
+    Student getStudentById(Long id);
+
+    Student update(Student student);
+
+    void delete(Student student);
 }
