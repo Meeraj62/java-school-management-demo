@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-//@RequestMapping("/students")
+@RequestMapping("/students")
 public class StudentController {
 
     private StudentService studentService;
@@ -16,10 +16,10 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String listStudents(Model model){
         model.addAttribute("students", studentService.getAllStudents());
-        return "index";
+        return "students/index";
     }
 
     @GetMapping("/create")
@@ -34,10 +34,10 @@ public class StudentController {
         try {
             this.studentService.store(student);
         } catch (Exception e) {
-            return "redirect:/create";
+            return "redirect:/students";
         }
         model.addAttribute("students", studentService.getAllStudents());
-        return "redirect:/";
+        return "redirect:/students";
     }
 
     @GetMapping("/edit/{id}")
@@ -45,7 +45,7 @@ public class StudentController {
         try{
              model.addAttribute("student",this.studentService.getStudentById(id));
         }catch (Exception e){
-            return "index";
+            return "students/index";
         }
 
         return "students/edit";
@@ -65,7 +65,7 @@ public class StudentController {
         }catch (Exception e){
             return null;
         }
-        return "redirect:/";
+        return "redirect:/students";
     }
 
     @GetMapping("/{id}")
@@ -76,6 +76,6 @@ public class StudentController {
         }catch (Exception e){
             return null;
         }
-        return  "redirect:/";
+        return  "redirect:/students";
     }
 }

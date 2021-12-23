@@ -26,7 +26,7 @@
                     <a class="nav-link text-white font-weight-bold" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white font-weight-bold" th:href="@{/create}">Add Students</a>
+                    <a class="nav-link text-white font-weight-bold" th:href="@{students}">Students</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white font-weight-bold" href="#">Teachers</a>
@@ -35,27 +35,27 @@
         </div>
     </nav>
 
-    <table class="table table-responsive table-bordered table-striped mt-2">
-        <thead class="table-dark">
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Action</th>
-        </thead>
-        <tr th:each="student : ${students}">
-            <td th:text="${student.firstName} + ' ' + ${student.lastName}">Onions</td>
-            <td th:text="${student.email}"></td>
-            <td>
-                <div class="row">
-                    <div class="col-6">
-                        <a th:href="@{'/edit/' + ${student.id}}" class="btn btn-sm btn-primary btn-block mr-2"> Edit </a>
-                    </div>
-                    <div class="col-6">
-                        <a th:href="@{'' + ${student.id}}" class="btn btn-sm btn-danger btn-block"> Delete </a>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+<!--    <table class="table table-responsive table-bordered table-striped mt-2">-->
+<!--        <thead class="table-dark">-->
+<!--        <th>Full Name</th>-->
+<!--        <th>Email</th>-->
+<!--        <th>Action</th>-->
+<!--        </thead>-->
+<!--        <tr th:each="student : ${students}">-->
+<!--            <td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>-->
+<!--            <td th:text="${student.email}"></td>-->
+<!--            <td>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-6">-->
+<!--                        <a th:href="@{'/edit/' + ${student.id}}" class="btn btn-sm btn-primary btn-block mr-2"> Edit </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <a th:href="@{'' + ${student.id}}" class="btn btn-sm btn-danger btn-block"> Delete </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--    </table>-->
 </div>
 
 </body>

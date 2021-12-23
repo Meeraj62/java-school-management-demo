@@ -37,13 +37,13 @@
     <div class="row  my-4">
     <h1 class="float-left">Students list</h1>
         <div class="col-md-4">
-            <a th:href="@{/create}" class="btn btn-danger btn-sm float-right">Add Student</a>
+            <a th:href="@{/students/create}" class="btn btn-danger btn-sm float-right">Add Student</a>
         </div>
     </div>
 
     <div class="card">
         <div class="card-body">
-            <form class="form" th:action="@{/store}" th:object="${student}" th:method="POST">
+            <form class="form" th:action="@{/students/store}" th:object="${student}" th:method="POST">
                 <div class="row">
 
                     <div class="col-6">
